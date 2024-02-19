@@ -1,0 +1,49 @@
+create table cliente (
+	cli_id int primary key auto_increment,
+    cli_cpf varchar(50) unique not null,
+    cli_nome varchar(50) not null,
+    cli_telefone int not null,
+    cli_cep varchar(50) not null,
+    cli_numero varchar(50),
+    cli_rua varchar(50),
+    cli_bairro varchar(50),
+    cli_cidade varchar(50),
+    cli_estado varchar(50)
+);
+
+create table produto (
+	pro_id int primary key auto_increment,
+    pro_lote varchar(50) not null,
+    pro_nome varchar(50) not null,
+    pro_fabricacao date not null,
+    pro_validade date not null,
+    pro_fk_unidade_medida int not null,
+    pro_fk_categoria int not null,
+    pro_fk_fornecedor int not null
+    
+);
+
+create table unidade_medida (
+	uni_id int primary key auto_increment,
+    uni_quantidade int not null,
+    uni_tipo varchar(50) not null
+);
+
+create table categoria (
+	cat_id int primary key auto_increment,
+    cat_nome varchar(50) not null unique
+);
+
+create table fornecedor(
+	for_id int primary key auto_increment,
+    for_nome varchar(50) not null,
+    for_cnpj varchar(50) not null,
+    for_telefone int not null,
+    for_cep varchar(50) not null,
+    for_numero varchar(50),
+    for_rua varchar(50),
+    for_bairro varchar(50),
+    for_cidade varchar(50),
+    for_estado varchar(50),
+    for_pais varchar(50)
+);
